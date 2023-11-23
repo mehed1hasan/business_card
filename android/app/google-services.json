@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "574880000818",
+    "project_id": "business-card-6daf5",
+    "storage_bucket": "business-card-6daf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574880000818:android:38bdec1a4bd21a30c7052b",
+        "android_client_info": {
+          "package_name": "com.mahedi.business_card"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWdtVLr6GXkO4irdmlcduR9lRp_zgRmUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
