@@ -1,4 +1,4 @@
-name: business_card
+name: new_business_card
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
@@ -7,10 +7,10 @@ environment:
 
 dependencies: 
   cupertino_icons: ^1.0.2
-  google_sign_in: ^6.1.6
-  firebase_auth: ^4.14.0
-  firebase_core: ^2.22.0
   get: 4.6.6
+  flutter_screenutil: ^5.9.0
+  flutter_pin_code_fields: ^2.2.0
+  flutter_onboarding_slider: ^1.0.11
   flutter: 
     sdk: flutter
 
@@ -19,6 +19,9 @@ dev_dependencies:
   flutter_test: 
     sdk: flutter
 
-flutter: 
+flutter:
   uses-material-design: true
+  assets:
+    - assets/
+    - assets/cards screen bottom sheet icon/
 

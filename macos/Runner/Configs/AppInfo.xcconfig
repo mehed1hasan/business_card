@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = business_card
+PRODUCT_NAME = new_business_card
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.mahedi.businessCard
+PRODUCT_BUNDLE_IDENTIFIER = com.mahedi.newBusinessCard
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2023 com.mahedi. All rights reserved.
