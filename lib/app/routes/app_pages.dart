@@ -6,6 +6,8 @@ import '../modules/contacts/bindings/contacts_binding.dart';
 import '../modules/contacts/views/contacts_view.dart';
 import '../modules/create_account/bindings/create_account_binding.dart';
 import '../modules/create_account/views/create_account_view.dart';
+import '../modules/create_account_otp/bindings/create_account_otp_binding.dart';
+import '../modules/create_account_otp/views/create_account_otp_view.dart';
 import '../modules/forgote_password/bindings/forgote_password_binding.dart';
 import '../modules/forgote_password/views/forgote_password_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -26,7 +28,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.ONBOARD;
 
   static final routes = [
     GetPage(
@@ -78,6 +80,11 @@ class AppPages {
       name: _Paths.SETTINGS,
       page: () => const SettingsView(),
       binding: SettingsBinding(),
+    ),
+    GetPage(
+      name: _Paths.CREATE_ACCOUNT_OTP,
+      page: () => const CreateAccountOtpView(),
+      binding: CreateAccountOtpBinding(),
     ),
   ];
 }

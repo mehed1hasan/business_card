@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:new_business_card/app/core/global_widget/inpurt_decoration.dart';
+import 'package:new_business_card/app/modules/create_account_otp/views/create_account_otp_view.dart';
+import 'package:new_business_card/app/routes/app_pages.dart';
 
 import '../../home/views/home_view.dart';
 import '../controllers/create_account_controller.dart';
@@ -238,15 +240,13 @@ class CreateAccountView extends GetView<CreateAccountController> {
                       ),
                     ),
                     onPressed: () {
-                      if (_formkey.currentState!.validate()) {
-                        // Navigate to a new page or perform other actions
-                        controller.emailController.value.clear();
-                        controller.passController.value.clear();
-                        Get.to(HomeView());
+                      if (_formkey.currentState!.validate() /*&& controller.isResponse==true*/) {
+
+                        controller.signUp();
                       } else {
                         Get.snackbar(
                           'Error',
-                          'Invalid email or password',
+                          'Something went wrong',
                           snackPosition: SnackPosition.BOTTOM,
                         );
                       }

@@ -48,7 +48,7 @@ class CardsView extends GetView<CardsController> {
                       style: TextStyle(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xff333333),
+                        color: const Color(0xff333333),
                       ),
                     ),
                     Text(
@@ -57,7 +57,7 @@ class CardsView extends GetView<CardsController> {
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
-                        color: Color(0xff555555),
+                        color: const Color(0xff555555),
                       ),
                     ),
                   ],
@@ -84,19 +84,20 @@ class CardsView extends GetView<CardsController> {
               ///physics: NeverScrollableScrollPhysics(),
               padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 5.h),
               itemCount: 4,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 20.0,
-                mainAxisSpacing: 20.0
+                crossAxisSpacing: 20.0.h,
+                mainAxisSpacing: 20.0.h
               ),
               itemBuilder: (BuildContext context, int index){
                 return InkWell(
                   onTap: (){
                     showModalBottomSheet<void>(
-                      shape: const RoundedRectangleBorder(
+                      shape:RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            topRight: Radius.circular(15),
+                            topLeft: const Radius.circular(20).r,
+                            topRight: const Radius.circular(20).r
+                            ,
                           )
                       ),
                       isScrollControlled: true,
@@ -104,6 +105,7 @@ class CardsView extends GetView<CardsController> {
                       builder: (BuildContext context) {
                         return SizedBox(
                           height: 715.h,
+                          /// widget call here
                           child: ShowModalBottomSheet(),
                         );
                       },

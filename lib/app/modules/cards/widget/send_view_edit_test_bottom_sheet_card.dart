@@ -19,7 +19,7 @@ class SendViewEditTestCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 15.h, bottom: 15.h, left: 10.h, right: 10.h),
+      padding: EdgeInsets.only(top: 10.h, bottom: 10.h, left: 10.h, right: 10.h),
       height: 142.h,
       width: 157.w,
       decoration: BoxDecoration(

@@ -14,6 +14,7 @@ abstract class Routes {
   static const CONTACTS = _Paths.CONTACTS;
   static const SCAN = _Paths.SCAN;
   static const SETTINGS = _Paths.SETTINGS;
+  static const CREATE_ACCOUNT_OTP = _Paths.CREATE_ACCOUNT_OTP;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const CONTACTS = '/contacts';
   static const SCAN = '/scan';
   static const SETTINGS = '/settings';
+  static const CREATE_ACCOUNT_OTP = '/create-account-otp';
 }

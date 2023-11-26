@@ -1,13 +1,13 @@
 import 'dart:ui';
 
-class BottomSheetCard1 {
+class BottomSheetCard2 {
 
   String? iconPath;
   Color? iconBgColor;
   String? title;
   String? subTitle;
 
-  BottomSheetCard1({
+  BottomSheetCard2({
     required this.iconPath,
     required this.iconBgColor,
     required this.title,

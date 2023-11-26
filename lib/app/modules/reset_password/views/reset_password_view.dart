@@ -223,8 +223,7 @@ class ResetPasswordView extends GetView<ResetPasswordController> {
                     backgroundColor: const Color(0xffFFFFFF),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius
-                          .circular(5.0)
-                          .r,
+                          .circular(5.0).r,
                     ),
                   ),
                   onPressed: () {

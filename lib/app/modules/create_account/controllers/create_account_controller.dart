@@ -1,10 +1,18 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:new_business_card/app/data/remote/model/create_account_response_model.dart';
+
+import '../../../data/remote/repository/create_account_repository.dart';
+import '../../../routes/app_pages.dart';
+
+String baseUrl = "http://192.168.145.154:8080";
+String createAccountEndPoint = "/api/auth/signup_with_email";
 
 class CreateAccountController extends GetxController {
   //TODO: Implement CreateAccountController
 
-  final count = 0.obs;
   final passController = TextEditingController().obs;
   final emailController = TextEditingController().obs;
   final fullNameController = TextEditingController().obs;
@@ -14,21 +22,29 @@ class CreateAccountController extends GetxController {
   var isPasswordValid = true.obs;
   var isFormValid = false.obs;
   var passShow = true.obs;
+  var isResponse = false.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
+  final createAccountResponseModel = CreateAccountResponseModel().obs;
+
+  signUp() async {
+    var response = await CreateAccountRepository().signUp(
+      fullNameController.value.text,
+      emailController.value.text,
+      passController.value.text,
+    );
+
+    if (response.statusCode == 200) {
+      // Navigate to a new page or perform other actions
+      emailController.value.clear();
+      passController.value.clear();
+      fullNameController.value.clear();
+      Get.toNamed(Routes.CREATE_ACCOUNT_OTP);
+
+      isResponse(true);
+    }
+    if (kDebugMode) {
+      print(
+          "*****************************$isResponse****************************");
+    }
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
