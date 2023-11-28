@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:new_business_card/app/modules/cards/widget/qr_nfc_trans_duplicate_bottom_sheet_card.dart';
 import 'package:new_business_card/app/modules/cards/widget/send_view_edit_test_bottom_sheet_card.dart';
-import 'package:new_business_card/app/modules/model/bottom_sheet_card2.dart';
-
-import '../../model/bottom_sheet_card1.dart';
+import 'package:new_business_card/app/modules/cards/widget/setting_delete_botom_sheet_card.dart';
+import '../../model/bottom_sheet_card_model.dart';
 
 class ShowModalBottomSheet extends StatelessWidget {
   ShowModalBottomSheet({super.key});
@@ -14,7 +13,7 @@ class ShowModalBottomSheet extends StatelessWidget {
 
     BottomSheetCard1(
       iconPath: 'assets/cards screen bottom sheet icon/send icon.png',
-      iconBgColor: Color(0x1A753ACF),
+      iconBgColor: const Color(0x1A753ACF),
       title: "Send",
       subTitle: "Share via QR, email, text and more.",
     ),
@@ -39,30 +38,30 @@ class ShowModalBottomSheet extends StatelessWidget {
 
   ];
 
-  List<BottomSheetCard2> bottomSheetCardList2 = [
+  List<BottomSheetCard1> bottomSheetCardList2 = [
 
-    BottomSheetCard2(
-      iconPath: 'assets/cards screen bottom sheet icon/send icon.png',
-      iconBgColor: Color(0x1A753ACF),
-      title: "QR",
+    BottomSheetCard1(
+      iconPath: 'assets/cards screen bottom sheet icon/qr icon.png',
+      iconBgColor: Color(0x1A007BFE),
+      title: "Download QR",
       subTitle: "Share via QR, email, text and more.",
     ),
-    BottomSheetCard2(
-      iconPath: 'assets/cards screen bottom sheet icon/view icon.png',
+    BottomSheetCard1(
+      iconPath: 'assets/cards screen bottom sheet icon/nfc icon.png',
       iconBgColor: Color(0x1AF58523),
-      title: "NFC",
+      title: "Write to NFC",
       subTitle: "Open your card in Business card",
     ),
-    BottomSheetCard2(
-      iconPath: 'assets/cards screen bottom sheet icon/edit icon.png',
-      iconBgColor: Color(0x1A008B71),
-      title: "Edit",
+    BottomSheetCard1(
+      iconPath: 'assets/cards screen bottom sheet icon/transfer icon.png',
+      iconBgColor: Color(0x1AFF3B30),
+      title: "Transfer",
       subTitle: "Share via QR, email, text and more.",
     ),
-    BottomSheetCard2(
-      iconPath: 'assets/cards screen bottom sheet icon/test icon.png',
-      iconBgColor: Color(0x1A008B71),
-      title: "Test",
+    BottomSheetCard1(
+      iconPath: 'assets/cards screen bottom sheet icon/duplicate icon.png',
+      iconBgColor: Color(0x1A5856D6),
+      title: "Duplicate",
       subTitle: "Open your card in Business card",
     ),
 
@@ -100,7 +99,7 @@ class ShowModalBottomSheet extends StatelessWidget {
         /// First List View (Send , View, Edit, Test)
         Container(
           padding: EdgeInsets.only(top: 20.h, bottom: 20.h, left: 20.w, right: 20.w),
-          height: 450.h,
+          height: 380.h,
           width: double.infinity,
           color: Colors.white,
           child: Column(
@@ -124,7 +123,8 @@ class ShowModalBottomSheet extends StatelessWidget {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 20.0.w,
-                      mainAxisSpacing: 20.0.h
+                      mainAxisSpacing: 20.0.h,
+                      childAspectRatio: 1.19.h,
                   ),
                   itemBuilder: (BuildContext context, int index){
                     return InkWell(
@@ -146,43 +146,69 @@ class ShowModalBottomSheet extends StatelessWidget {
         ),
         /// Second List View (QR, TFC, Transfer, Duplicate)
         Container(
-          padding: EdgeInsets.only(top:20.h, left: 20.w, right: 20.w),
-          margin: EdgeInsets.only(left: 20.w, right: 20.w),
-          height: 200.h,
-          width: double.infinity,
-          //color: const Color(0xffF2F2F7),
-          decoration: BoxDecoration(
-            color: const Color(0xFFF2F2F7),
-            borderRadius: BorderRadius.circular(15.r),
-          ),
-          child: GridView.builder(
-            ///physics: NeverScrollableScrollPhysics(),
-            //padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
-            //physics: ScrollPhysics(),
+          color: const Color(0xFFFDFDFD),
 
-            itemCount: 4,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 10.0,
-                mainAxisSpacing: 10.0,
-               childAspectRatio: 2.3
-
+          child: Container(
+            padding: EdgeInsets.only(top:20.h, left: 20.w, right: 20.w),
+            margin: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 20),
+            height: 280.h,
+            width: double.infinity,
+            //color: const Color(0xffF2F2F7),
+            decoration: BoxDecoration(
+              color: const Color(0xFFF2F2F7),
+              borderRadius: BorderRadius.circular(15.r),
             ),
-            itemBuilder: (BuildContext context, int index){
-              return InkWell(
-                  onTap: (){
+            child: Column(
+              children: [
+                Expanded(
+                  child: GridView.builder(
+                    ///physics: NeverScrollableScrollPhysics(),
+                    //padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+                    //physics: ScrollPhysics(),
 
-                  },
-                  child: QrNfcTransDuplicateCard(
-                      iconPath: bottomSheetCardList2[index].iconPath,
-                      iconBgColor: bottomSheetCardList2[index].iconBgColor,
-                      title: bottomSheetCardList2[index].title,
-                      subTitle: bottomSheetCardList2[index].subTitle
-                  )
-              );
-            },
+                    itemCount: 4,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 15.0,
+                        mainAxisSpacing: 15.0,
+                       childAspectRatio: 1.78
+
+                    ),
+                    itemBuilder: (BuildContext context, int index){
+                      return InkWell(
+                          onTap: (){
+
+                          },
+                          child: QrNfcTransDuplicateCard(
+                              iconPath: bottomSheetCardList2[index].iconPath,
+                              iconBgColor: bottomSheetCardList2[index].iconBgColor,
+                              title: bottomSheetCardList2[index].title,
+                              subTitle: bottomSheetCardList2[index].subTitle
+                          )
+                      );
+                    },
+                  ),
+                ),
+                Row(
+                  children: [
+                    SettingDeleteBottomSheetCard(
+                      iconPath:"assets/cards screen bottom sheet icon/setting icon.png",
+                      title: "Settings",
+                    ),
+                    const SizedBox(width: 15,),
+                    SettingDeleteBottomSheetCard(
+                      iconPath:"assets/cards screen bottom sheet icon/delete icon.png",
+                      title: "Delete",
+                    ),
+                  ],
+
+                )
+
+              ],
+            ),
           ),
-        )
+        ),
+
       ],
     );
   }

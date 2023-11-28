@@ -83,7 +83,9 @@ class CreateAccountOtpView extends GetView<CreateAccountOtpController> {
                       borderRadius: BorderRadius.circular(5.0).r,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.signUpOtp();
+                  },
                   child: Text(
                     "Submit",
                     style: TextStyle(

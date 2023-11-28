@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:new_business_card/app/modules/cards/widget/show_modal_bottom_sheet.dart';
 
 import '../controllers/cards_controller.dart';
 
-class CardsView extends GetView<CardsController> {
+class CardsView extends GetView<CardsController>  {
   const CardsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -16,11 +15,6 @@ class CardsView extends GetView<CardsController> {
         children: [
           Stack(
             children: [
-              /*Container(
-                height: double.infinity,
-                width: double.infinity,
-                color: Color(0xffF2F2FA),
-              ),*/
               SizedBox(
                 height: 189.h,
                 width: double.infinity,
@@ -41,7 +35,6 @@ class CardsView extends GetView<CardsController> {
                 ),
                 child: Column(
                   children: [
-                    //SizedBox(height: 60.h,),
                     Text(
                       'Nam Nai',
                       textAlign:TextAlign.center,
@@ -75,7 +68,6 @@ class CardsView extends GetView<CardsController> {
                   ),
                 ),
               ),
-
             ],
           ),
           SizedBox(height: 24.h,),
@@ -89,27 +81,31 @@ class CardsView extends GetView<CardsController> {
                 crossAxisSpacing: 20.0.h,
                 mainAxisSpacing: 20.0.h
               ),
-              itemBuilder: (BuildContext context, int index){
+              itemBuilder: (BuildContext context2, int index){
                 return InkWell(
                   onTap: (){
-                    showModalBottomSheet<void>(
-                      shape:RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topLeft: const Radius.circular(20).r,
-                            topRight: const Radius.circular(20).r
-                            ,
-                          )
-                      ),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (BuildContext context) {
-                        return SizedBox(
-                          height: 715.h,
-                          /// widget call here
-                          child: ShowModalBottomSheet(),
-                        );
-                      },
-                    );
+                    controller.bottomSheetM(context2);
+
+                    // showModalBottomSheet(
+                    //   shape:RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.only(
+                    //         topLeft: const Radius.circular(20).r,
+                    //         topRight: const Radius.circular(20).r
+                    //         ,
+                    //       )
+                    //   ),
+                    //   isScrollControlled: true,
+                    //   context: context,
+                    //   ///transitionAnimationController: controller.animationControllers,
+                    //   builder: (BuildContext context) {
+                    //     return SizedBox(
+                    //       height: 715.h,
+                    //       /// widget call here
+                    //       child: ShowModalBottomSheet(),
+                    //     );
+                    //   },
+                    // );
+
                   },
                   child: Container(
                     //margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),

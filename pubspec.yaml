@@ -12,6 +12,7 @@ dependencies:
   flutter_pin_code_fields: ^2.2.0
   flutter_onboarding_slider: ^1.0.11
   http: ^1.1.0
+  font_awesome_flutter: ^10.6.0
   flutter: 
     sdk: flutter
 

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:new_business_card/app/data/local/model/argument_model.dart';
 import 'package:new_business_card/app/data/remote/model/create_account_response_model.dart';
 
 import '../../../data/remote/repository/create_account_repository.dart';
@@ -35,10 +36,15 @@ class CreateAccountController extends GetxController {
 
     if (response.statusCode == 200) {
       // Navigate to a new page or perform other actions
+
+      Get.toNamed(Routes.CREATE_ACCOUNT_OTP, arguments: ArgumentModel(
+        email: emailController.value.text,
+        fullName: fullNameController.value.text,
+        pass: passController.value.text,
+      ));
       emailController.value.clear();
       passController.value.clear();
       fullNameController.value.clear();
-      Get.toNamed(Routes.CREATE_ACCOUNT_OTP);
 
       isResponse(true);
     }

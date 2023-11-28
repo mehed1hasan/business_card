@@ -10,10 +10,10 @@ abstract class Routes {
   static const FORGOTE_PASSWORD = _Paths.FORGOTE_PASSWORD;
   static const CREATE_ACCOUNT = _Paths.CREATE_ACCOUNT;
   static const RESET_PASSWORD = _Paths.RESET_PASSWORD;
-  static const CARDS = _Paths.CARDS;
-  static const CONTACTS = _Paths.CONTACTS;
-  static const SCAN = _Paths.SCAN;
-  static const SETTINGS = _Paths.SETTINGS;
+  static const CARDS = _Paths.HOME + _Paths.CARDS;
+  static const CONTACTS = _Paths.HOME + _Paths.CONTACTS;
+  static const SCAN = _Paths.HOME + _Paths.SCAN;
+  static const SETTINGS =_Paths.HOME + _Paths.SETTINGS;
   static const CREATE_ACCOUNT_OTP = _Paths.CREATE_ACCOUNT_OTP;
 }
 
