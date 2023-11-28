@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/account_details/bindings/account_details_binding.dart';
+import '../modules/account_details/views/account_details_view.dart';
 import '../modules/cards/bindings/cards_binding.dart';
 import '../modules/cards/views/cards_view.dart';
 import '../modules/contacts/bindings/contacts_binding.dart';
@@ -85,6 +87,11 @@ class AppPages {
       name: _Paths.CREATE_ACCOUNT_OTP,
       page: () => const CreateAccountOtpView(),
       binding: CreateAccountOtpBinding(),
+    ),
+    GetPage(
+      name: _Paths.ACCOUNT_DETAILS,
+      page: () => const AccountDetailsView(),
+      binding: AccountDetailsBinding(),
     ),
   ];
 }

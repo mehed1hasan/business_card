@@ -13,8 +13,9 @@ abstract class Routes {
   static const CARDS = _Paths.HOME + _Paths.CARDS;
   static const CONTACTS = _Paths.HOME + _Paths.CONTACTS;
   static const SCAN = _Paths.HOME + _Paths.SCAN;
-  static const SETTINGS =_Paths.HOME + _Paths.SETTINGS;
+  static const SETTINGS = _Paths.HOME + _Paths.SETTINGS;
   static const CREATE_ACCOUNT_OTP = _Paths.CREATE_ACCOUNT_OTP;
+  static const ACCOUNT_DETAILS = _Paths.ACCOUNT_DETAILS;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const SCAN = '/scan';
   static const SETTINGS = '/settings';
   static const CREATE_ACCOUNT_OTP = '/create-account-otp';
+  static const ACCOUNT_DETAILS = '/account-details';
 }
