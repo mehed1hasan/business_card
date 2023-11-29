@@ -90,7 +90,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ACCOUNT_DETAILS,
-      page: () => const AccountDetailsView(),
+      page: () => AccountDetailsView(),
       binding: AccountDetailsBinding(),
     ),
   ];

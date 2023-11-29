@@ -11,10 +11,7 @@ class CardsController extends GetxController with GetSingleTickerProviderStateMi
   @override
   onInit(){
     super.onInit();
-
     animationControllers = AnimationController(vsync: this, duration: const Duration(milliseconds: 700) );
-
-
   }
 
   @override
@@ -27,8 +24,7 @@ class CardsController extends GetxController with GetSingleTickerProviderStateMi
       shape:RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: const Radius.circular(20).r,
-            topRight: const Radius.circular(20).r
-            ,
+            topRight: const Radius.circular(20).r,
           )
       ),
       isScrollControlled: true,
