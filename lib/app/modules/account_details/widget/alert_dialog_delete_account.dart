@@ -33,11 +33,17 @@ class AlertDialogDeleteAccount extends StatelessWidget {
                   child: Container(
                     height: 48.h,
                     width: 48.w,
-                    decoration: BoxDecoration(
+                      padding: EdgeInsets.only(
+                          top: 12.h, bottom: 12.h, right: 12.w, left: 12.w),
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(48.r),
                         color: const Color(0xffFEE4E2)
                     ),
-                    child: const Icon(Icons.highlight_remove_outlined, color: Color(0xffD92D20),),
+                    child: Image.asset(
+                        'assets/alert dialog icon/delete account.png',
+                      height: 24.h,
+                      width: 24.w,
+                    )
                   ),
                 ),
                 SizedBox(height: 16.h,),

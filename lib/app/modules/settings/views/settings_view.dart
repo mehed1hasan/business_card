@@ -83,10 +83,10 @@ class SettingsView extends GetView<SettingsController> {
               ),
             ),
             SizedBox(height: 8.h,),
-            ///    widget call   ///
+            ///    Widget Call   /////////////////////////////////
             const BusinessCardSettingCard(),
             SizedBox(height: 16.h,),
-            /// Preference ///////////////////////////////////////
+            ///    Preference ///////////////////////////////////////
             Text(
               'Preference',
               style: TextStyle(
@@ -163,28 +163,9 @@ class SettingsView extends GetView<SettingsController> {
                 ),
               ),
             ),
-
           ],
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-*/

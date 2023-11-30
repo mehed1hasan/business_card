@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:new_business_card/app/modules/home/views/home_view.dart';
-import 'package:new_business_card/app/modules/login/widget/account_image.dart';
+import 'package:new_business_card/app/modules/login/widget/social_account_image.dart';
+import 'package:new_business_card/app/routes/app_pages.dart';
 
 import '../../../core/global_widget/inpurt_decoration.dart';
 import '../controllers/login_controller.dart';
@@ -227,7 +228,7 @@ class LoginView extends GetView<LoginController> {
                         // Navigate to a new page or perform other actions
                         controller.emailController.value.clear();
                         controller.passController.value.clear();
-                        Get.to(HomeView());
+                        Get.toNamed(Routes.HOME);
                       } else {
                         Get.snackbar(
                           'Error',
@@ -293,7 +294,6 @@ class LoginView extends GetView<LoginController> {
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
@@ -302,22 +302,4 @@ class LoginView extends GetView<LoginController> {
       );
     });
   }
-
 }
-
-
-/*
-
-onPressed: () {
-                if (_loginController.isFormValid.value) {
-                  // Navigate to a new page or perform other actions
-                  Get.to(HomeScreen());
-                } else {
-                  Get.snackbar(
-                    'Error',
-                    'Invalid email or password',
-                    snackPosition: SnackPosition.BOTTOM,
-                  );
-                }
-              },
-* */

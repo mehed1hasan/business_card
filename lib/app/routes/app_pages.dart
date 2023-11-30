@@ -22,6 +22,8 @@ import '../modules/reset_password/bindings/reset_password_binding.dart';
 import '../modules/reset_password/views/reset_password_view.dart';
 import '../modules/scan/bindings/scan_binding.dart';
 import '../modules/scan/views/scan_view.dart';
+import '../modules/send_feedback/bindings/send_feedback_binding.dart';
+import '../modules/send_feedback/views/send_feedback_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
 import '../modules/settings/views/settings_view.dart';
 
@@ -92,6 +94,11 @@ class AppPages {
       name: _Paths.ACCOUNT_DETAILS,
       page: () => AccountDetailsView(),
       binding: AccountDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEND_FEEDBACK,
+      page: () => const SendFeedbackView(),
+      binding: SendFeedbackBinding(),
     ),
   ];
 }

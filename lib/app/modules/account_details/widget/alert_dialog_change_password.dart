@@ -8,8 +8,8 @@ import 'package:new_business_card/app/modules/account_details/controllers/accoun
 
 import '../../../core/global_widget/inpurt_decoration.dart';
 
-class AlertDialogCardTransfer extends StatelessWidget {
-  AlertDialogCardTransfer({super.key});
+class AlertDialogChangePassword extends StatelessWidget {
+  AlertDialogChangePassword({super.key});
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
@@ -24,10 +24,9 @@ class AlertDialogCardTransfer extends StatelessWidget {
       content: Builder(
         builder: (context) {
           return Container(
-            height:360.h,
+            height:450.h,
             width: 335.w,
-            padding: EdgeInsets.only(
-                top: 20.h, bottom: 20.h, left: 16.w, right: 16.w),
+            padding: EdgeInsets.only(top: 20.h, bottom: 20.h, left: 16.w, right: 16.w),
             decoration: BoxDecoration(
                 color: const Color(0xffFFFFFF),
                 borderRadius: BorderRadius.circular(10.r)
@@ -48,13 +47,13 @@ class AlertDialogCardTransfer extends StatelessWidget {
                           height: 48.h,
                           width: 48.w,
                           padding: EdgeInsets.only(
-                              top: 8.h, bottom: 8.h, right: 8.w, left: 8.w),
+                              top: 12.h, bottom: 12.h, right: 12.w, left: 12.w),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(48.r),
                               color: const Color(0xffF4EBFF)
                           ),
                           child: Image.asset(
-                            'assets/alert dialog icon/card transfer.png',
+                            'assets/alert dialog icon/password change.png',
                             height: 24.h,
                             width: 24.w,
                           )
@@ -62,7 +61,7 @@ class AlertDialogCardTransfer extends StatelessWidget {
                     ),
                     SizedBox(height: 16.h,),
                     Text(
-                      'Card Transfer',
+                      'Enter your password',
                       style: TextStyle(
                         color: const Color(0xff101828),
                         fontWeight: FontWeight.w700,
@@ -71,7 +70,7 @@ class AlertDialogCardTransfer extends StatelessWidget {
                     ),
                     SizedBox(height: 8.h,),
                     Text(
-                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                      'Enter your password to make this change.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: const Color(0xff667085),
@@ -80,38 +79,35 @@ class AlertDialogCardTransfer extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 16.h,),
-                    Text(
-                      'Email Address',
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        color: const Color(0xff333333),
-                        fontStyle: FontStyle.normal,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
+                    /// Old Email Address TextField
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Old Password',
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                          color: const Color(0xff333333),
+                          fontStyle: FontStyle.normal,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                     SizedBox(height: 8.h,),
-
-                    /// Email TextField ///////////////////////////
+                    /// Old Password TextField ///////////////////////////
                     Obx(() {
                       return SizedBox(
                         child: TextFormField(
-                          //key: _formkey,
                           keyboardType: TextInputType.emailAddress,
                           controller: accountDetailsController.emailController.value,
-
                           /// Input Decoration Call
-                          decoration: buildInputDecoration(Icons.email,
-                              "Email Address"),
+                          decoration: buildInputDecoration(Icons.email, "Old Email Address"),
                           validator: (String? value) {
                             if (kDebugMode) {
                               print(value);
                             }
                             if (value!.isEmpty) {
-                              return 'Please a Enter Email';
-                            }
-                            if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
-                              return 'Please a valid Email';
+                              return 'Please a Enter Password';
                             }
                             return null;
                           },
@@ -121,8 +117,52 @@ class AlertDialogCardTransfer extends StatelessWidget {
                         ),
                       );
                     }),
+
+                    /// New Password Address
+                    SizedBox(height: 16.h,),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'New Password',
+                        textAlign: TextAlign.end,
+                        style: TextStyle(
+                          color: const Color(0xff333333),
+                          fontStyle: FontStyle.normal,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 8.h,),
+
+                    /// New Password TextField ///////////////////////////
+                    Obx(() {
+                      return SizedBox(
+                        child: TextFormField(
+                          //key: _formkey,
+                          keyboardType: TextInputType.emailAddress,
+                          controller: accountDetailsController.emailController.value,
+
+                          /// Input Decoration Call
+                          decoration: buildInputDecoration(Icons.email, "New Email Address"),
+                          validator: (String? value) {
+                            if (kDebugMode) {
+                              print(value);
+                            }
+                            if (value!.isEmpty) {
+                              return 'Please Enter a Password';
+                            }
+                            return null;
+                          },
+                          onChanged: (value) {
+                            accountDetailsController.emailController.value.text = value;
+                          },
+                        ),
+                      );
+                    }),
+
                     SizedBox(height: 24.h,),
-                    /// Export Contact Button ////////////////////////////
+                    /// Password Conform Button ////////////////////////////
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(303.w, 52.h),
@@ -132,7 +172,6 @@ class AlertDialogCardTransfer extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-
                         if (_formkey.currentState!.validate()) {
                           Get.snackbar(
                             'Okke Boss',

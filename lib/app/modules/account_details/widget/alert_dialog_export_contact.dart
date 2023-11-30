@@ -33,11 +33,14 @@ class AlertDialogExportContact extends StatelessWidget {
                   child: Container(
                     height: 48.h,
                     width: 48.w,
-                    decoration: BoxDecoration(
+                      padding: EdgeInsets.only(top: 8.h, bottom: 8.h, right: 8.w, left: 8.w),
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(48.r),
                         color: const Color(0xffD1FADF)
                     ),
-                    child: const Icon(Icons.check, color: Colors.green,),
+                    child: Image.asset(
+                      'assets/alert dialog icon/export contacts.png',
+                    )
                   ),
                 ),
                 SizedBox(height: 16.h,),

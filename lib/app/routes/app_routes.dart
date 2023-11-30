@@ -16,6 +16,7 @@ abstract class Routes {
   static const SETTINGS = _Paths.HOME + _Paths.SETTINGS;
   static const CREATE_ACCOUNT_OTP = _Paths.CREATE_ACCOUNT_OTP;
   static const ACCOUNT_DETAILS = _Paths.ACCOUNT_DETAILS;
+  static const SEND_FEEDBACK = _Paths.SEND_FEEDBACK;
 }
 
 abstract class _Paths {
@@ -33,4 +34,5 @@ abstract class _Paths {
   static const SETTINGS = '/settings';
   static const CREATE_ACCOUNT_OTP = '/create-account-otp';
   static const ACCOUNT_DETAILS = '/account-details';
+  static const SEND_FEEDBACK = '/send-feedback';
 }
