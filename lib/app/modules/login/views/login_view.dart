@@ -219,16 +219,14 @@ class LoginView extends GetView<LoginController> {
                       fixedSize: Size(375.w, 48.h),
                       backgroundColor: const Color(0xff5B2EFF),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius
-                            .circular(5.0).r,
+                        borderRadius: BorderRadius.circular(5.0).r,
                       ),
                     ),
                     onPressed: () {
                       if (_formkey.currentState!.validate()) {
-                        // Navigate to a new page or perform other actions
-                        controller.emailController.value.clear();
-                        controller.passController.value.clear();
-                        Get.toNamed(Routes.HOME);
+                        /*controller.emailController.value.clear();
+                        controller.passController.value.clear();*/
+                        //Get.toNamed(Routes.HOME);
                       } else {
                         Get.snackbar(
                           'Error',

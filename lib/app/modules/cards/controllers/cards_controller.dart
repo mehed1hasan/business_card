@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../widget/show_modal_bottom_sheet.dart';
+import '../widget/card_screen_show_modal_bottom_sheet.dart';
 
 class CardsController extends GetxController with GetSingleTickerProviderStateMixin {
 
@@ -19,13 +19,13 @@ class CardsController extends GetxController with GetSingleTickerProviderStateMi
     //animationControllers.dispose();
   }
 
-  bottomSheetM(context){
+   cardBottomSheet(context){
       showModalBottomSheet(
       shape:RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: const Radius.circular(20).r,
-            topRight: const Radius.circular(20).r,
-          )
+        borderRadius: BorderRadius.only(
+          topLeft: const Radius.circular(20).r,
+          topRight: const Radius.circular(20).r,
+        )
       ),
       isScrollControlled: true,
       context: context,
@@ -33,10 +33,9 @@ class CardsController extends GetxController with GetSingleTickerProviderStateMi
       builder: (BuildContext context) {
         return SizedBox(
           height: 715.h,
-          child: ShowModalBottomSheet()
+          child: CardScreenShowModalBottomSheet()
         );
       },
     );
   }
-
 }

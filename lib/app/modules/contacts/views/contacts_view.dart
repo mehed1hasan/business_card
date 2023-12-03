@@ -9,10 +9,6 @@ class ContactsView extends GetView<ContactsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ContactsView'),
-        centerTitle: true,
-      ),
       body: const Center(
         child: Text(
           'ContactsView is working',

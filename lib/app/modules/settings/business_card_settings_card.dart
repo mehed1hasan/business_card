@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
-import 'package:new_business_card/app/routes/app_pages.dart';
+
 
 class BusinessCardSettingCard extends StatelessWidget {
   const BusinessCardSettingCard({super.key});

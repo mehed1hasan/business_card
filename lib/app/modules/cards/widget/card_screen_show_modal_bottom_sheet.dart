@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:new_business_card/app/modules/cards/widget/qr_nfc_trans_duplicate_bottom_sheet_card.dart';
 import 'package:new_business_card/app/modules/cards/widget/send_view_edit_test_bottom_sheet_card.dart';
 import 'package:new_business_card/app/modules/cards/widget/setting_delete_botom_sheet_card.dart';
 import '../../model/bottom_sheet_card_model.dart';
+import 'bottom_sheet_send.dart';
 
-class ShowModalBottomSheet extends StatelessWidget {
-  ShowModalBottomSheet({super.key});
+class CardScreenShowModalBottomSheet extends StatelessWidget {
+  CardScreenShowModalBottomSheet({super.key});
 
   List<BottomSheetCard1> bottomSheetCardList1 = [
 
@@ -129,14 +130,17 @@ class ShowModalBottomSheet extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index){
                     return InkWell(
                       onTap: (){
-
+                        if(index==0){
+                          Get.back();
+                          sendBottomSheet(context);
+                        }
                       },
                       child: SendViewEditTestCard(
                         iconPath: bottomSheetCardList1[index].iconPath,
                         iconBgColor: bottomSheetCardList1[index].iconBgColor,
                         title: bottomSheetCardList1[index].title,
                         subTitle: bottomSheetCardList1[index].subTitle
-                      )
+                      ),
                     );
                   },
                 ),

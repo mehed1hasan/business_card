@@ -10,6 +10,7 @@ class CardsView extends GetView<CardsController>  {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xffF2F2FA),
       body: Column(
         children: [
@@ -84,7 +85,7 @@ class CardsView extends GetView<CardsController>  {
               itemBuilder: (BuildContext context2, int index){
                 return InkWell(
                   onTap: (){
-                    controller.bottomSheetM(context2);
+                    controller.cardBottomSheet(context2);
 
                     // showModalBottomSheet(
                     //   shape:RoundedRectangleBorder(

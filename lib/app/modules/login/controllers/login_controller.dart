@@ -18,8 +18,33 @@ class LoginController extends GetxController {
   var passShow = true.obs;
 
 
+
+
+  login(){
+
+    
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // Validate email format
-  void validateEmail() {
+  /*void validateEmail() {
     isEmailValid.value = RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(emailController.value.text);
   }
 
@@ -31,7 +56,7 @@ class LoginController extends GetxController {
   // Check if the form is valid
   void checkFormValidity() {
     isFormValid.value = isEmailValid.value && isPasswordValid.value;
-  }
+  }*/
 
 
   @override
