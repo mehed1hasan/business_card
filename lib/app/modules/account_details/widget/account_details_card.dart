@@ -55,6 +55,7 @@ class AccountDetailsCard extends StatelessWidget {
               color: const Color(0xff555555),
             ),
           ),
+          trailing: Icon(Icons.arrow_forward_ios_sharp, size: 20.r,),
         ),
       ],
     );

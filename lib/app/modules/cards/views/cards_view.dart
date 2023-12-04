@@ -86,30 +86,8 @@ class CardsView extends GetView<CardsController>  {
                 return InkWell(
                   onTap: (){
                     controller.cardBottomSheet(context2);
-
-                    // showModalBottomSheet(
-                    //   shape:RoundedRectangleBorder(
-                    //       borderRadius: BorderRadius.only(
-                    //         topLeft: const Radius.circular(20).r,
-                    //         topRight: const Radius.circular(20).r
-                    //         ,
-                    //       )
-                    //   ),
-                    //   isScrollControlled: true,
-                    //   context: context,
-                    //   ///transitionAnimationController: controller.animationControllers,
-                    //   builder: (BuildContext context) {
-                    //     return SizedBox(
-                    //       height: 715.h,
-                    //       /// widget call here
-                    //       child: ShowModalBottomSheet(),
-                    //     );
-                    //   },
-                    // );
-
                   },
                   child: Container(
-                    //margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
                     padding: const EdgeInsets.all(10),
                     height: 172.h,
                     width: 157.w,

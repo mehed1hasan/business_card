@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_onboarding_slider/background_final_button.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -82,11 +81,10 @@ class OnboardView extends GetView<OnboardController> {
                   height: 1.h,
                 ),
               ],
-
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 20, right: 20),
+            padding: const EdgeInsets.only(left: 20, right: 20),
             width: double.infinity,
             height: 276.h,
             color: Colors.white,
