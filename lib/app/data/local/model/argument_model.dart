@@ -5,6 +5,7 @@ class ArgumentModel {
 
   String? otp;
 
+
   ArgumentModel({
     this.fullName,
     this.email,

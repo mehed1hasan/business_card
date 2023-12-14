@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
-import 'package:new_business_card/app/modules/settings/business_card_settings_card.dart';
+import 'package:new_business_card/app/modules/settings/widget/business_card_settings_card.dart';
 import 'package:new_business_card/app/routes/app_pages.dart';
 
 import '../controllers/settings_controller.dart';
@@ -13,7 +13,7 @@ class SettingsView extends GetView<SettingsController> {
   @override
   Widget build(BuildContext context) {
     //Get.find<SettingsController>();
-
+    Get.put(SettingsController());
     return Scaffold(
       backgroundColor: const Color(0xffF2F2FA),
       body: Container(
@@ -83,8 +83,8 @@ class SettingsView extends GetView<SettingsController> {
               ),
             ),
             SizedBox(height: 8.h,),
-            ///    Widget Call   /////////////////////////////////
-            const BusinessCardSettingCard(),
+            ///  /////  Widget Call   ///////////////////////////////////////////
+            BusinessCardSettingCard(controller: controller,),
             SizedBox(height: 16.h,),
             ///    Preference ///////////////////////////////////////
             Text(

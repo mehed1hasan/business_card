@@ -35,13 +35,13 @@ class CreateAccountView extends GetView<CreateAccountController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Center(
+                  Center(
                     child: Text(
                       'Create Account',
                       style: TextStyle(
-                        color: Color(0xff333333),
+                        color: const Color(0xff333333),
                         fontStyle: FontStyle.normal,
-                        fontSize: 24,
+                        fontSize: 24.sp,
                         fontWeight: FontWeight.w700,
 
                       ),
@@ -229,15 +229,14 @@ class CreateAccountView extends GetView<CreateAccountController> {
                   SizedBox(height: 40.h,),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(375, 48),
+                      fixedSize:  Size(375.w, 48.h),
                       backgroundColor: const Color(0xff5B2EFF),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
                     ),
                     onPressed: () {
-                      if (_formkey.currentState!.validate() /*&& controller.isResponse==true*/) {
-
+                      if (_formkey.currentState!.validate()) {
                         controller.signUp();
                       } else {
                         Get.snackbar(

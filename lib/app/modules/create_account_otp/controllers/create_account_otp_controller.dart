@@ -31,7 +31,6 @@ class CreateAccountOtpController extends GetxController {
       pass: arguments.value.pass,
       email: arguments.value.email,
       otp: otpController.value.text,
-
     );
 
     if (response.statusCode == 200) {

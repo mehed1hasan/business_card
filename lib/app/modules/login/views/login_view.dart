@@ -224,9 +224,7 @@ class LoginView extends GetView<LoginController> {
                     ),
                     onPressed: () {
                       if (_formkey.currentState!.validate()) {
-                        /*controller.emailController.value.clear();
-                        controller.passController.value.clear();*/
-                        //Get.toNamed(Routes.HOME);
+                        controller.login();
                       } else {
                         Get.snackbar(
                           'Error',

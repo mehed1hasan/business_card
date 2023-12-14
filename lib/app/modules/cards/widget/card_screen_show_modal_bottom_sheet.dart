@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:new_business_card/app/modules/cards/controllers/cards_controller.dart';
 import 'package:new_business_card/app/modules/cards/widget/qr_nfc_trans_duplicate_bottom_sheet_card.dart';
 import 'package:new_business_card/app/modules/cards/widget/send_view_edit_test_bottom_sheet_card.dart';
 import 'package:new_business_card/app/modules/cards/widget/setting_delete_botom_sheet_card.dart';
+import 'package:new_business_card/app/routes/app_pages.dart';
 import '../../model/bottom_sheet_card_model.dart';
 import 'bottom_sheet_send.dart';
 
 class CardScreenShowModalBottomSheet extends StatelessWidget {
-  CardScreenShowModalBottomSheet({super.key});
+  CardScreenShowModalBottomSheet(this.currentCardIndex, this.currentCardId,this.controller,{super.key});
 
+  int currentCardId;
+  int currentCardIndex;
+  CardsController controller;
+
+  final cardsController = Get.find<CardsController>();
   List<BottomSheetCard1> bottomSheetCardList1 = [
 
     BottomSheetCard1(
@@ -133,6 +140,11 @@ class CardScreenShowModalBottomSheet extends StatelessWidget {
                         if(index==0){
                           Get.back();
                           sendBottomSheet(context);
+                        }if(index==2){
+                          //Get.back();
+                          print("*****Bottom Sheet Model Length: ${cardsController!.userCardList.value.data?.model!.length.toInt()}************");
+                          //print("*****Bottom Sheet Card Name: ${controller!.userCardList.value.data?.model![currentCardIndex].general!.cardName.toString()}************");
+                          Get.toNamed(Routes.EDIT_CADR, arguments: cardsController);
                         }
                       },
                       child: SendViewEditTestCard(
@@ -195,24 +207,29 @@ class CardScreenShowModalBottomSheet extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    SettingDeleteBottomSheetCard(
-                      iconPath:"assets/cards screen bottom sheet icon/setting icon.png",
-                      title: "Settings",
+                    GestureDetector(
+                      onTap: (){},
+                      child: SettingDeleteBottomSheetCard(
+                        iconPath:"assets/cards screen bottom sheet icon/setting icon.png",
+                        title: "Settings",
+                      ),
                     ),
                     const SizedBox(width: 15,),
-                    SettingDeleteBottomSheetCard(
-                      iconPath:"assets/cards screen bottom sheet icon/delete icon.png",
-                      title: "Delete",
+                    GestureDetector(
+                      onTap: (){
+                        controller.cardDelete(currentCardId);
+                      },
+                      child: SettingDeleteBottomSheetCard(
+                        iconPath:"assets/cards screen bottom sheet icon/delete icon.png",
+                        title: "Delete",
+                      ),
                     ),
                   ],
-
                 )
-
               ],
             ),
           ),
         ),
-
       ],
     );
   }

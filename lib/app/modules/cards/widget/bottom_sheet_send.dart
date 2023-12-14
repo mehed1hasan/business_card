@@ -117,28 +117,31 @@ sendBottomSheet(context){
                   ],
                 ),
               ),
+              SizedBox(height: 40.h,),
               Expanded(
                 child: TabBarView(
                   children: [
-                    // Content for Tab 1
+                    /// QR Code Tabbar  //////////////////
                     Column(
                       children: [
-                        Icon(
-                          Icons.qr_code,
-                          size: 300,
-                          color: Colors.blue.shade600,
+                        SizedBox(
+                          height: 213.h,
+                          width: 213.w,
+                          child: Image.asset(
+                            'assets/cards screen bottom sheet icon/qr code icon.png'
+                          ),
                         ),
-                        const SizedBox(height: 20,),
+                        const SizedBox(height: 40,),
                         Text(
                             "Point your camera at the QR code.",
                             textAlign: TextAlign.start,
                             style:TextStyle(
-                              color: Color(0xff000000),
+                              color: const Color(0xff000000),
                               fontSize:18.sp,
                               fontWeight:FontWeight.w400,
                             )
                         ),
-                        SizedBox(height: 30.h,),
+                        SizedBox(height: 50.h,),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             fixedSize: Size(375.w, 52.h),
@@ -152,12 +155,10 @@ sendBottomSheet(context){
                           },
                           child: const Text("Sign-In"),
                         ),
-
                       ],
                     ),
                     // Content for Tab 2
                     const Center(child: EmailTabbar()),
-
                     // Content for Tab 3
                     const Center(child: TextTabbar()),
                   ],

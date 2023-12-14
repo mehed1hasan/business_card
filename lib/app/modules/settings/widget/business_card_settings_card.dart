@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:new_business_card/app/modules/settings/widget/show_all_tipes.dart';
+
+import '../../../routes/app_pages.dart';
+import '../controllers/settings_controller.dart';
 
 
 class BusinessCardSettingCard extends StatelessWidget {
-  const BusinessCardSettingCard({super.key});
+  const BusinessCardSettingCard({required this.controller,super.key});
 
+  final SettingsController controller;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,10 +25,12 @@ class BusinessCardSettingCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          /// 111111111111111111111111111111111
+          /// Show All Tips //////////////////////////////////////////
           InkWell(
             onTap: (){
-
+              Get.bottomSheet(
+                  ShowAllTips()
+              );
             },
             child: Row(
               children: [
@@ -52,7 +61,7 @@ class BusinessCardSettingCard extends StatelessWidget {
           /// Send Feedback  ///////////////////////////////
           InkWell(
             onTap: (){
-              //Get.toNamed(Routes.SEND_FEEDBACK);
+              Get.toNamed(Routes.SEND_FEEDBACK);
             },
             child: Row(
               children: [
@@ -79,7 +88,7 @@ class BusinessCardSettingCard extends StatelessWidget {
             //height: 2,
             thickness: 1.5,
           ),
-          /// 3333333333333333333
+          /// 3333333333333333333 ///////////////////////////////////////////
           InkWell(
             onTap: (){
 

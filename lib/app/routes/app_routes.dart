@@ -17,6 +17,11 @@ abstract class Routes {
   static const CREATE_ACCOUNT_OTP = _Paths.CREATE_ACCOUNT_OTP;
   static const ACCOUNT_DETAILS = _Paths.ACCOUNT_DETAILS;
   static const SEND_FEEDBACK = _Paths.SEND_FEEDBACK;
+  static const ALL_CONTACTS = _Paths.ALL_CONTACTS;
+  static const CREATE_CARD = _Paths.CREATE_CARD;
+  static const PREVIEW_CARD = _Paths.PREVIEW_CARD;
+  static const SPLASH_SCREEN = _Paths.SPLASH_SCREEN + _Paths.LOGIN;
+  static const EDIT_CADR = _Paths.EDIT_CADR;
 }
 
 abstract class _Paths {
@@ -35,4 +40,9 @@ abstract class _Paths {
   static const CREATE_ACCOUNT_OTP = '/create-account-otp';
   static const ACCOUNT_DETAILS = '/account-details';
   static const SEND_FEEDBACK = '/send-feedback';
+  static const ALL_CONTACTS = '/all-contacts';
+  static const CREATE_CARD = '/create-card';
+  static const PREVIEW_CARD = '/preview-card';
+  static const SPLASH_SCREEN = '/splash-screen';
+  static const EDIT_CADR = '/edit-cadr';
 }

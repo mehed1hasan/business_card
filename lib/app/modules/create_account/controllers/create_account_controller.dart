@@ -3,8 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:new_business_card/app/data/local/model/argument_model.dart';
-import 'package:new_business_card/app/data/remote/model/create_account_response_model.dart';
-
 import '../../../data/remote/repository/create_account_repository.dart';
 import '../../../routes/app_pages.dart';
 
@@ -25,7 +23,6 @@ class CreateAccountController extends GetxController {
   var passShow = true.obs;
   var isResponse = false.obs;
 
-  final createAccountResponseModel = CreateAccountResponseModel().obs;
 
   signUp() async {
     var response = await CreateAccountRepository().signUp(

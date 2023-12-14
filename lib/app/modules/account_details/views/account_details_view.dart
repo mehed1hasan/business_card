@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:get/get.dart';
 import 'package:new_business_card/app/modules/account_details/widget/account_details_card.dart';
 import 'package:new_business_card/app/modules/account_details/widget/alert_dialog_card_transfer.dart';
 import 'package:new_business_card/app/modules/account_details/widget/alert_dialog_change_email.dart';
 import 'package:new_business_card/app/modules/account_details/widget/alert_dialog_change_password.dart';
 import 'package:new_business_card/app/modules/account_details/widget/alert_dialog_export_contact.dart';
-
 import '../controllers/account_details_controller.dart';
 import '../widget/alert_dialog_delete_account.dart';
 
@@ -45,8 +43,11 @@ class AccountDetailsView extends GetView<AccountDetailsController> {
       title: 'Delete Account',
       subTitle: 'Delete your Profile',
     ),
-
-
+    /*AccountDetailsList(
+      iconPath: 'assets/account details icon/logout.png',
+      title: 'Logout',
+      subTitle: 'Logout your Account',
+    ),*/
   ] ;
 
   @override
@@ -232,7 +233,7 @@ class AccountDetailsView extends GetView<AccountDetailsController> {
                           showDialog(
                               context: context,
                               builder: (BuildContext context) {
-                                return const AlertDialogDeleteAccount();
+                                return AlertDialogDeleteAccount(controller: controller,);
                               }
                           );
                         }
@@ -252,9 +253,6 @@ class AccountDetailsView extends GetView<AccountDetailsController> {
     );
   }
 }
-
-
-
 class AccountDetailsList{
   String? iconPath;
   String? title;

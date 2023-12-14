@@ -11,12 +11,10 @@ class SendViewEditTestCard extends StatelessWidget {
     required this.title,
     required this.subTitle,
   });
-
   String? iconPath;
   Color? iconBgColor;
   String? title;
   String? subTitle;
-
   @override
   Widget build(BuildContext context) {
     return Stack(

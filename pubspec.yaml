@@ -5,7 +5,7 @@ description: A new Flutter project.
 environment: 
   sdk: '>=3.1.1 <4.0.0'
 
-dependencies: 
+dependencies:
   cupertino_icons: ^1.0.2
   get: 4.6.6
   flutter_screenutil: ^5.9.0
@@ -13,6 +13,13 @@ dependencies:
   flutter_onboarding_slider: ^1.0.11
   http: ^1.1.0
   font_awesome_flutter: ^10.6.0
+  azlistview: ^2.0.0
+  flutter_barcode_scanner: ^2.0.0
+  image_picker: ^1.0.4
+  shared_value: ^3.0.0
+  cached_network_image: ^3.3.0
+  hexcolor: ^3.0.1
+
   flutter: 
     sdk: flutter
 
@@ -29,4 +36,6 @@ flutter:
     - assets/account details icon/
     - assets/alert dialog icon/
     - assets/contacts icon/
+    - assets/card_design/
+
 

@@ -1,23 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class SendFeedbackController extends GetxController {
   //TODO: Implement SendFeedbackController
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  final feedbackController = TextEditingController().obs;
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

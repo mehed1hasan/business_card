@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+import '../controllers/account_details_controller.dart';
 
 class AlertDialogDeleteAccount extends StatelessWidget {
-  const AlertDialogDeleteAccount({super.key});
+  const AlertDialogDeleteAccount({required this.controller,super.key});
+
+  final AccountDetailsController controller;
+
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +56,7 @@ class AlertDialogDeleteAccount extends StatelessWidget {
                 Text(
                   'Delete Account',
                   style: TextStyle(
-                    color: Color(0xff101828),
+                    color: const Color(0xff101828),
                     fontWeight: FontWeight.w700,
                     fontSize: 20.sp,
                   ),
@@ -66,7 +72,7 @@ class AlertDialogDeleteAccount extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.h,),
-                /// Export Contact Button ////////////////////////////
+                /// Delete Account Button ////////////////////////////
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(303.w, 52.h),
@@ -77,6 +83,10 @@ class AlertDialogDeleteAccount extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
+                    ///      //////////////////////////
+
+                    controller.accountDelete();
+
 
                   },
                   child: const Text("Delete Account"),

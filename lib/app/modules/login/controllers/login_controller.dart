@@ -1,7 +1,10 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:new_business_card/app/data/remote/repository/login_repository.dart';
+import 'package:new_business_card/app/routes/app_pages.dart';
+
+import '../../../core/global_widget/shared_value.dart';
+import '../../../data/remote/model/login_response_model.dart';
 
 class LoginController extends GetxController {
   //TODO: Implement LoginController
@@ -16,63 +19,42 @@ class LoginController extends GetxController {
   var isPasswordValid = true.obs;
   var isFormValid = false.obs;
   var passShow = true.obs;
+  final loginResponseModel = LoginResponseModel().obs;
 
+  login() async{
+    var response = await LoginRepository().login(
+      emailController.value.text,
+      passController.value.text,
+    );
+    if(response.statusCode == 200){
 
+      loginResponseModel.value = response;
+      bToken.$ = "Bearer ${loginResponseModel.value.data!.apiToken!}";
+      token.$ = loginResponseModel.value.data!.apiToken!;
+      name.$ = loginResponseModel.value.data!.user!.name!;
+      email.$ = loginResponseModel.value.data!.user!.userName!;
 
+      token.save();
+      token.load();
+      bToken.save();
+      bToken.load();
 
-  login(){
+      saveValue();
+      loadValue();
 
-    
-
+      Get.toNamed(Routes.CARDS,);
+      emailController.value.clear();
+      passController.value.clear();
+    }
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // Validate email format
-  /*void validateEmail() {
-    isEmailValid.value = RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(emailController.value.text);
-  }
-
-  // Validate password (add your own password validation logic)
-  void validatePassword() {
-    isPasswordValid.value = passController.value.text.length >= 6; // Example: Minimum 6 characters
-  }
-
-  // Check if the form is valid
-  void checkFormValidity() {
-    isFormValid.value = isEmailValid.value && isPasswordValid.value;
-  }*/
-
 
   @override
   void onInit() {
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   void increment() => count.value++;
 }

@@ -2,11 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/onboard_controller.dart';
-
 class OnboardView extends GetView<OnboardController> {
   const OnboardView({Key? key}) : super(key: key);
   @override
@@ -65,7 +62,6 @@ class OnboardView extends GetView<OnboardController> {
                   child:  Image.asset('assets/onboard image3.png'),
 
                 ),
-
               ],
               centerBackground: true,
               totalPage: 3,
@@ -158,7 +154,6 @@ class OnboardView extends GetView<OnboardController> {
                 ),
               ],
             )
-
           )
         ],
       ),
